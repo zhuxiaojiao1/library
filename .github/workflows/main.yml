@@ -13,9 +13,9 @@ jobs:
       - name: get dr_Front_ComponentStoryBook code
         uses: actions/checkout@v3
         with:
-          repository: ${{secrets.DR_REGISTORY}}
+          # repository: ${{secrets.DR_REGISTORY}}
           token: ${{secrets.DRTOKEN}}
-          ref: development
+          # ref: development
 
       - name: github pages
         uses: crazy-max/ghaction-github-pages@v3.0.0
