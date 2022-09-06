@@ -2,9 +2,9 @@ name: library
 on:
   push:
     branches: main
-  # schedule:
-  # 周一到周五每天的第6小时运行
-  # - cron: "* 6 * * 0,4"
+  schedule:
+    # 周一到周五每天的第6小时运行
+    - cron: "* 6 * * 0,4"
 
 jobs:
   build:
@@ -13,9 +13,9 @@ jobs:
       - name: get dr_Front_ComponentStoryBook code
         uses: actions/checkout@v3
         with:
-          # repository: ${{secrets.DR_REGISTORY}}
-          token: ${{secrets.DRTOKEN}}
-          # ref: development
+          repository: ${{secrets.DR_REPOSITORY}}
+          token: ${{secrets.DR_TOKEN}}
+          ref: development
 
       - name: github pages
         uses: crazy-max/ghaction-github-pages@v3.0.0
