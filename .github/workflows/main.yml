@@ -17,5 +17,12 @@ jobs:
           token: ${{secrets.DR_TOKEN}}
           ref: development
 
+      - name: install dependencies
+        run: |
+          npm i
+          npm run build-storybook
+
       - name: github pages
         uses: crazy-max/ghaction-github-pages@v3.0.0
+        width:
+          build_dir: build
