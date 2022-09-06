@@ -1,0 +1,20 @@
+name: library
+on:
+  push: main
+  # schedule:
+  # 周一到周五每天的第6小时运行
+  # - cron: "* 6 * * 0,4"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get dr_Front_ComponentStoryBook code
+        uses: actions/checkout@v3
+        with:
+          repository: ${{github.secret.DR_REGISTORY}}
+          token: ${{github.secret.DRTOKEN}}
+          ref: development
+
+      - name: github pages
+        uses: crazy-max/ghaction-github-pages@v3.0.0
