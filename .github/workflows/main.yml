@@ -3,7 +3,7 @@ on:
   push:
     branches: main
   schedule:
-    # 周一到周五每天的第6小时运行
+    # 周一到周五每天的14点运行 -- 有8小时的时差
     - cron: "0 6 * * 0,4"
 
 jobs:
