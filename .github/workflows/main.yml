@@ -4,7 +4,7 @@ on:
     branches: main
   schedule:
     # 周一到周五每天的第6小时运行
-    - cron: "0 6 * * 0,4"
+    - cron: "0 6 * * *"
 
 jobs:
   build:
